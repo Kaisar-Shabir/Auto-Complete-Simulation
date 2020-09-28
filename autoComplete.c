@@ -62,7 +62,12 @@ void fnSearch(Node cur, char *str) {
             cur = cur->arr[tolower(str[i]) - 'a'];
         }
         else {
-            printf("%s\n", str);
+            printf("%s was not found. Do you want to add it?(y/n)\t", str);
+            char decision;
+            scanf("%c", &decision);
+            if(tolower(decision) == 'y') {
+                fnAdd(str);
+            }
             return;
         }
     }
